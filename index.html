@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Generator</h1>
+        <h3>Background Color</h3>
+        <input type="text" id="background_color" placeholder="Eks: red, green, blue, #ffffff">
+        <button onclick="change_background()">Submit</button>
+    </div>
+
+
+    <script>
+        function change_background(){
+            const background_color = document.getElementById('background_color').value;
+            document.body.style.backgroundColor = background_color;
+        }
+
+    </script>
+</body>
+</html>
