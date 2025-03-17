@@ -8,9 +8,17 @@
 <body>
     <div class="container">
         <h1>HTML Generator</h1>
-        <h3>Background Color</h3>
+        <h3>Background Color:</h3>
         <input type="text" id="background_color" placeholder="Eks: red, green, blue, #ffffff">
         <button onclick="change_background()">Submit</button>
+
+        <h3>Velg elementtype:</h3>
+        <select id="elementType">
+            <option value="p">Paragraf</option>
+            <option value="h2">Overskrift (H2)</option>
+            <option value="button">Knapp</option>
+        </select>
+
     </div>
 
 
@@ -18,6 +26,11 @@
         function change_background(){
             const background_color = document.getElementById('background_color').value;
             document.body.style.backgroundColor = background_color;
+        }
+
+        function addElement(){
+            const elementType = document.getElementById('elementType').value;
+            
         }
 
     </script>
