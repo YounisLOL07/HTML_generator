@@ -3,36 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML generator</title>
+    <title>HTML Generator</title>
 </head>
 <body>
-    <div class="container">
-        <h1>HTML Generator</h1>
-        <h3>Background Color:</h3>
-        <input type="text" id="background_color" placeholder="Eks: red, green, blue, #ffffff">
-        <button onclick="change_background()">Submit</button>
 
-        <h3>Choose Element Type:</h3>
-        <select id="elementType">
-            <option value="p">Paragraf</option>
-            <option value="h2">Overskrift (H2)</option>
-            <option value="button">Knapp</option>
-        </select>
+    <h1>HTML Generator</h1>
 
-    </div>
+    <label for="bgColor">Endre bakgrunnsfarge:</label>
+    <input type="text" id="bgColor" placeholder="F.eks. red, blue, #f0f0f0">
+    <button onclick="changeBackground()">Endre</button>
 
+    <hr>
+
+    <label for="elementType">Velg elementtype:</label>
+    <select id="elementType">
+        <option value="p">Paragraf</option>
+        <option value="h2">Overskrift (H2)</option>
+        <option value="button">Knapp</option>
+    </select>
+    
+    <br><br>
+
+    <label for="elementContent">Tekstinnhold:</label>
+    <input type="text" id="elementContent" placeholder="Skriv noe her">
+    
+    <br><br>
+
+    <label for="elementColor">Tekstfarge:</label>
+    <input type="text" id="elementColor" placeholder="F.eks. green, #ff0000">
+
+    <br><br>
+
+    <label for="parentElement">Plasser elementet i:</label>
+    <select id="parentElement">
+        <option value="container">Hovedområdet</option>
+        <option value="customContainer">Egendefinert område</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addElement()">Legg til element</button>
+
+    <div id="container"></div>
+    <div id="customContainer" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px;"></div>
 
     <script>
-        function change_background(){
-            const background_color = document.getElementById('background_color').value;
-            document.body.style.backgroundColor = background_color;
+        function changeBackground() {
+            let color = document.getElementById("bgColor").value;
+            document.body.style.backgroundColor = color;
         }
 
-        function addElement(){
-            const elementType = document.getElementById('elementType').value;
+        function addElement() {
+            let elementType = document.getElementById("elementType").value;
+            let content = document.getElementById("elementContent").value;
+            let color = document.getElementById("elementColor").value;
+            let parent = document.getElementById(document.getElementById("parentElement").value);
 
+            let newElement = document.createElement(elementType);
+            newElement.textContent = content;
+            newElement.style.color = color;
+            newElement.classList.add("generated");
+
+            parent.appendChild(newElement);
         }
-
     </script>
+
 </body>
 </html>
