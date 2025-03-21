@@ -1,15 +1,16 @@
-let SubmitButton = document.getElementById('Submit-BgColor')
-
-SubmitButton.addEventListener("click", changeBackgroundColor);
-
-function changeBackgroundColor(){
-    let backgroundcolor = document.getElementById('BgColor')
-    document.body.style.backgroundColor = backgroundcolor.value;
+function changeBackground() {
+    let color = document.getElementById("bgColor").value;
+    document.body.style.backgroundColor = color;
 }
+function addElement() {
+    let elementType = document.getElementById("elementType").value;
+    let content = document.getElementById("elementContent").value;
+    let color = document.getElementById("elementColor").value;
+    let parent = document.getElementById(document.getElementById("parentElement").value);
+    let newElement = document.createElement(elementType);
+    newElement.textContent = content;
+    newElement.style.color = color;
+    newElement.classList.add("generated");
 
-function addElementButton(){
-    let ElType = document.getElementById('ElementType').value
-    let ElInnehold = document.getElemenetById('VelgInnehold').value
-
+    parent.appendChild(newElement);
 }
-
