@@ -6,17 +6,34 @@
     <title>HTML Generator</title>
 </head>
 <body>
+    <div id="Top-container"></div>
     <h1>HTML Generator</h1>
     <h3>Endre bakgrunnsfarge</h3>
-    <input type="text" id="BgColor" placeholder="F.Eks: Green, Red, Blue, #ffffff, #23ef2d">
+    <input type="text" id="BgColor" placeholder="F.Eks: Green, Red, #ffffff">
     <button id="Submit-BgColor">Submit</button>
+
     <h3>Velg type:</h3>
-    <select name="" id="ElementType">
-        <option value="Paragraf">Paragraf</option>
-        <option value="Overskrift">Overskrift (h2)</option>
-        <option value="Knapp">Knapp</option>
+    <select id="ElementType">
+        <option value="p">Paragraf</option>
+        <option value="h2">Overskrift (h2)</option>
+        <option value="button">Knapp</option>
     </select>
 
+    <h3>Velg Innehold</h3>
+    <input type="text" id="VelgInnehold" placeholder="Skriv hva som helst">
+
+    <h3>Velg fargen til inneholdet:</h3>
+    <input type="text" id="inneholdFarge" placeholder="F.Eks: Green, Red, #ffffff">
+
+    <h3>Element plassering:</h3>
+    <select id="ElementType">
+        <option value="Øverst">Øverst</option>
+        <option value="Nederst">Nederst</option>
+    </select>
+    <button id="addElement">Add Element</button>
+
+
+    <div id="Bottom-container"></div>
 <script src="code.js"></script>
 </body>
 </html>
